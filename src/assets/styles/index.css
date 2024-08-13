@@ -2,6 +2,85 @@
 @tailwind components;
 @tailwind utilities;
 
-.app-body {
-    background-color: hsl(78,92%,95%);
+@layer base {
+    body {
+        @apply bg-lime-50;
+    }
+
+    button {
+        @apply cursor-pointer;
+    }
+}
+
+@layer components {
+
+    .header {
+        @apply flex justify-between border-b border-slate-200 px-10 py-8;
+    }
+
+    .header__logo {
+        @apply flex items-center gap-4;
+    }
+
+    .header-logo__img {
+        @apply w-10;
+    }
+
+    .header-logo__title {
+        @apply text-xl font-bold uppercase;
+    }
+
+    .header-logo__text {
+        @apply text-slate-400;
+    }
+
+    .header__list {
+        @apply flex items-center gap-10;
+    }
+
+    .header-list__item {
+        @apply flex items-center gap-3 text-gray-500 cursor-pointer transition duration-200 ease-in-out hover:text-lime-500;
+    }
+
+    .card {
+        @apply relative bg-white border border-slate-100 rounded-3xl p-8 cursor-pointer transition hover:-translate-y-2 hover:shadow-xl;
+    }
+
+    .card__title {
+        @apply mt-2;
+    }
+
+    .card__favorite {
+        @apply absolute top-8 left-8;
+    }
+
+    .card__footer {
+        @apply flex justify-between mt-5;
+    }
+
+    .card-footer__block {
+        @apply flex flex-col;
+    }
+
+    .card-footer__text {
+        @apply text-slate-400;
+    }
+}
+
+@layer utilities {
+    .container {
+        @apply w-4/5 mx-auto bg-white rounded-xl shadow-xl mt-14;
+    }
+
+    .content {
+        @apply p-10;
+    }
+
+    .wrapper {
+        @apply grid grid-cols-4 gap-5 ;
+    }
+
+    .page-title {
+        @apply text-3xl font-bold mb-8;
+    }
 }

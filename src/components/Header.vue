@@ -1,28 +1,28 @@
 <template>
-  <header class="flex justify-between border-b border-slate-300 px-10 py-8">
-    <div class="flex items-center gap-4">
+  <header class="header">
+    <div class="header__logo header-logo">
       <img
-          class="w-10"
+          class="header-logo__img"
           src="/logo.png"
           alt="logo"
       >
-      <div>
-        <h2 class="text-xl font-bold uppercase">Vue Sneakers</h2>
-        <p class="text-slate-400">Магазин лучших кроссовок</p>
+      <div class="header-logo__block">
+        <h2 class="header-logo__title">Vue Sneakers</h2>
+        <p class="header-logo__text">Магазин лучших кроссовок</p>
       </div>
     </div>
-    <ul class="flex items-center gap-10">
-      <li class="flex items-center gap-3 text-gray-500">
+    <ul class="header__list header-list">
+      <li class="header-list__item">
         <img src="/cart.svg" alt="Cart">
-        <b>1205 руб.</b>
+        <b>1205 &#8381;</b>
       </li>
-      <li class="flex items-center gap-3 text-gray-500">
+      <li class="header-list__item">
         <img src="/heart.svg" alt="Favorite">
-        <b>Закладки</b>
+        <span>Закладки</span>
       </li>
-      <li class="flex items-center gap-3 text-gray-500">
+      <li class="header-list__item">
         <img src="/profile.svg" alt="Profile">
-        <b>Профиль</b>
+        <span>Профиль</span>
       </li>
     </ul>
   </header>

@@ -1,9 +1,16 @@
 <template>
-  <div class="w-4/5 mx-auto bg-white h-screen rounded-xl shadow-xl mt-14">
-    <Header/>
+  <div class="container">
+    <Header />
+    <div class="content">
+      <h1 class="page-title">Все кроссовки</h1>
+      <div class="wrapper">
+        <Card />
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
   import Header from "@/components/Header.vue";
+  import Card from "@/components/Card.vue";
 </script>
