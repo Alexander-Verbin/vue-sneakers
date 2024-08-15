@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+svg.fill{
+    fill: currentColor;
+}
+
+svg.stroke{
+    stroke: currentColor;
+    fill: none;
+}
+
 @layer base {
     body {
         @apply bg-lime-50;
@@ -65,6 +74,10 @@
     .card-footer__text {
         @apply text-slate-400;
     }
+
+    .card-list {
+        @apply grid grid-cols-4 gap-5 mt-8;
+    }
 }
 
 @layer utilities {
@@ -76,11 +89,7 @@
         @apply p-10;
     }
 
-    .wrapper {
-        @apply grid grid-cols-4 gap-5 ;
-    }
-
     .page-title {
-        @apply text-3xl font-bold mb-8;
+        @apply text-3xl font-bold;
     }
 }
