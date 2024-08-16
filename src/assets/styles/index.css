@@ -78,6 +78,26 @@ svg.stroke{
     .card-list {
         @apply grid grid-cols-4 gap-5 mt-8;
     }
+
+    .drawer {
+        @apply fixed z-10 top-0 left-0 w-full h-full bg-black/70;
+    }
+
+    .cart {
+        @apply fixed z-20 top-0 right-0 w-96 h-full bg-white p-8;
+    }
+
+    .cart-header {
+        @apply flex items-baseline gap-5;
+    }
+
+    .cart-header__button{
+        @apply text-black/30 rotate-180 p-1 transition hover:text-lime-500 hover:-translate-x-1;
+    }
+
+    .cart-header__title {
+        @apply text-3xl font-bold;
+    }
 }
 
 @layer utilities {
