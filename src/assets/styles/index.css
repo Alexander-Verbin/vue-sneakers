@@ -79,16 +79,16 @@ svg.stroke{
         @apply grid grid-cols-4 gap-5 mt-8;
     }
 
-    .drawer {
+    .drawer-bg {
         @apply fixed z-10 top-0 left-0 w-full h-full bg-black/70;
     }
 
-    .cart {
+    .drawer-cart {
         @apply fixed z-20 top-0 right-0 w-96 h-full bg-white p-8;
     }
 
     .cart-header {
-        @apply flex items-baseline gap-5;
+        @apply flex items-baseline gap-5 mb-8;
     }
 
     .cart-header__button{
@@ -97,6 +97,30 @@ svg.stroke{
 
     .cart-header__title {
         @apply text-3xl font-bold;
+    }
+
+    .cart-item-list {
+        @apply flex flex-col gap-4;
+    } ;
+
+    .cart-item {
+        @apply w-full flex items-center gap-4 border border-slate-200 p-4 rounded-xl;
+    }
+
+    .cart-item__img {
+        @apply w-16 h-16;
+    }
+
+    .cart-item__info {
+        @apply flex flex-col flex-grow;
+    }
+
+    .cart-item__controls {
+        @apply flex justify-between mt-2;
+    }
+
+    .cart-item__delete {
+        @apply opacity-40 hover:opacity-100 transition;
     }
 }
 
