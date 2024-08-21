@@ -4,7 +4,7 @@
     <div class="cart-item__info">
       <p class="cart-item__text">{{ title }} efvfev</p>
       <div class="cart-item__controls">
-        <b>{{ price }} efvgrfev &#8381;</b>
+        <b>{{ price }} 123 &#8381;</b>
         <button type="button" class="cart-item__delete">
           <img src="/close.svg" alt="Delete">
         </button>

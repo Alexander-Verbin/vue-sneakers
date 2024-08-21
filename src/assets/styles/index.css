@@ -122,6 +122,25 @@ svg.stroke{
     .cart-item__delete {
         @apply opacity-40 hover:opacity-100 transition;
     }
+
+    .drawer-cart__footer {
+        @apply mt-full;
+    }
+
+    .drawer-cart-footer {
+        @apply flex flex-col gap-4;
+    }
+
+    .drawer-cart-footer-item {
+        @apply flex gap-2;
+    }
+    .drawer-cart-footer-item__dots {
+        @apply flex-1 border-b border-dashed;
+    }
+
+    .drawer-cart-footer__btn {
+        @apply bg-lime-500 w-full rounded-xl py-3 text-white mt-5 transition hover:bg-lime-600 active:bg-lime-700 disabled:bg-slate-400;
+    }
 }
 
 @layer utilities {
@@ -133,7 +152,19 @@ svg.stroke{
         @apply p-10;
     }
 
-    .page-title {
+    .page-head {
+        @apply flex items-center justify-between;
+    }
+
+    .page-head__title {
         @apply text-3xl font-bold;
+    }
+
+    .page-head__input {
+        @apply border rounded-md transition py-2 pl-10 pr-4 outline-none focus:border-lime-500;
+    }
+
+    .mt-full {
+        margin-top: 100%;
     }
 }

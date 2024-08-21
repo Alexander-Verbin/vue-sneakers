@@ -2,11 +2,16 @@
   <div class="container">
     <Header />
     <div class="content">
-      <h1 class="page-title">Все кроссовки</h1>
+      <div class="page-head">
+        <h1 class="page-head__title">Все кроссовки</h1>
+        <div class="">
+          <input type="search" placeholder="Поиск" class="page-head__input">
+        </div>
+      </div>
       <CardList />
     </div>
   </div>
-  <Drawer />
+<!--  <Drawer />-->
 </template>
 
 <script setup>
