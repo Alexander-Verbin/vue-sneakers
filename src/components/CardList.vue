@@ -1,11 +1,13 @@
 <template>
   <div class="card-list">
     <Card
-        title="title"
-        imgUrl="/sneakers/sneakers-1.jpg"
-        :price="1205"
-        :isAdded="false"
-        :isFavorite="true"
+      v-for="item in items"
+      :key="item.id"
+      :title="item.title"
+      :imageUrl="item.imageUrl"
+      :price="item.price"
+      :isAdded="false"
+      :isFavorite="true"
     />
   </div>
 </template>
@@ -15,4 +17,8 @@
 
   const onClickAdd = () => {}
   const onClickFavorite = () => {}
+
+  defineProps({
+    items: Array
+  })
 </script>

@@ -7,7 +7,7 @@
     >
       <img :src="!isFavorite ? '/like-1.svg' : '/like-2.svg'" alt="Like" />
     </button>
-    <img :src="imgUrl" :alt="title" />
+    <img :src="imageUrl" :alt="title" />
     <p class="card__title">{{ title }}</p>
     <div class="card__footer card-footer">
       <div class="card-footer__block">
@@ -27,7 +27,7 @@
 <script setup>
   defineProps({
     title: String,
-    imgUrl: String,
+    imageUrl: String,
     price: Number,
     isFavorite: Boolean,
     isAdded: Boolean,
