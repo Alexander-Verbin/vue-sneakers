@@ -63,8 +63,12 @@ svg.stroke{
         @apply absolute top-8 left-8;
     }
 
+    .card-footer {
+        @apply flex justify-between
+    }
+
     .card__footer {
-        @apply flex justify-between mt-5;
+        @apply mt-5;
     }
 
     .card-footer__block {

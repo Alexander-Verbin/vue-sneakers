@@ -2,14 +2,14 @@
   <div class="page-head">
     <h1 class="page-head__title">{{ title }}</h1>
     <div class="page-head__controls">
-      <select class="page-head__select">
-        <option>
+      <select @change="onChangeSelect" class="page-head__select">
+        <option :value="CONSTANTS.SELECT_VALUE_NAME">
           По названию
         </option>
-        <option>
+        <option :value="CONSTANTS.SELECT_VALUE_PRICE_UP">
           По цене (Дешевле)
         </option>
-        <option>
+        <option :value="CONSTANTS.SELECT_VALUE_PRICE_DOWN">
           По цене (Дороже)
         </option>
       </select>
@@ -25,6 +25,9 @@
 
 <script setup>
   defineProps({
-    title: String
+    title: String,
+    onChangeSelect: Function,
   })
+
+  import { CONSTANTS } from '@/assets/constants/index.js'
 </script>
