@@ -2,7 +2,7 @@
   <div class="container">
     <Header />
     <div class="content">
-      <PageHead  title="Все кроссовки" :onChangeSelect="onChangeSelect"/>
+      <PageHead  title="Все кроссовки" :onChangeFilters="onChangeFilters"/>
       <CardList :items="items"/>
     </div>
   </div>
@@ -10,10 +10,9 @@
 </template>
 
 <script setup>
-import { onMounted, ref, watch } from 'vue'
-  import axios from 'axios'
+  import { onMounted, reactive, ref, watch } from 'vue'
 
-  import { CONSTANTS } from '@/assets/constants'
+  import { fetchItems } from '@/assets/constants'
 
   import Header from "@/components/Header.vue";
   import CardList from "@/components/CardList.vue";
@@ -21,35 +20,26 @@ import { onMounted, ref, watch } from 'vue'
   import Drawer from "@/components/Drawer.vue";
 
   const items = ref([]);
-  const sortBy = ref("");
-  const searchQuery = ref("");
+  const filters = reactive({
+    sortBy: "title",
+    searchQuery: "",
+  })
 
-  const onChangeSelect = event => {
-    sortBy.value = event.target.value;
+  const onChangeFilters = {
+    Select: function(event) {
+      filters.sortBy = event.target.value;
+    },
+    Input: function(event) {
+      filters.searchQuery = event.target.value;
+    }
   }
 
 
-  onMounted(async () => {
+  onMounted(() => {
+    fetchItems(items, filters)
+  });
 
-    try {
-      const { data } = await axios.get(`${CONSTANTS.BASE_URL + CONSTANTS.ROUTE_ITEMS}`);
-
-      items.value = data;
-    }
-    catch (error) {
-      console.error(error);
-    }
-
-  })
-
-  watch(sortBy, async () => {
-    try {
-      const { data } = await axios.get(`${CONSTANTS.BASE_URL + CONSTANTS.ROUTE_ITEMS}?sortBy=${sortBy.value}`);
-
-      items.value = data;
-    }
-    catch (error) {
-      console.error(error);
-    }
-  })
+  watch(filters,() => {
+    fetchItems(items, filters)
+  });
 </script>
